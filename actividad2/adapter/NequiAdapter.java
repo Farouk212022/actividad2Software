@@ -15,7 +15,6 @@ public class NequiAdapter implements IPaymentMethod {
     public boolean validateConnection() {
         if(nequi.connectionToNequi()){
         System.out.println("Numero de Celular: "+ nequi.getPhoneNumber());
-        System.out.println("Conexión con Nuevo Método de pago establecida");
         return true;
         }
         else{
