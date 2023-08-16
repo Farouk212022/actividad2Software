@@ -13,11 +13,11 @@ public class NequiAdapter implements IPaymentMethod {
 
     @Override
     public boolean validateConnection() {
-        if(nequi.connectionToNequi()){
-        System.out.println("Numero de Celular: "+ nequi.getPhoneNumber());
-        return true;
-        }
-        else{
+        if (nequi.connectionToNequi()) {
+            System.out.println("Numero de Celular: " + nequi.getPhoneNumber());
+            nequi.initTransferProcces();
+            return true;
+        } else {
             System.out.println("No se logro conectar con Nequi");
             return false;
         }
@@ -25,7 +25,13 @@ public class NequiAdapter implements IPaymentMethod {
 
     @Override
     public void confirmPayment() {
-        System.out.println("Pago con Nuevo Método de Pago realizado");
+        if (nequi.transferConfirmed()){
+            System.out.println("Pago con Nequi realizado");
+            nequi.closeConnectionToNequi();
+        }
+        else{
+            System.out.println("Error en la transferencia");
+        }
     }
-    
+
 }
