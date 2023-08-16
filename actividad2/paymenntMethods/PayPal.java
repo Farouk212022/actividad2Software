@@ -17,7 +17,6 @@ public class PayPal implements IPaymentMethod{
     @Override
     public boolean validateConnection() {
         System.out.println("Cuenta:"+ accountNumber);
-        System.out.println("Contraseña: **********");
         System.out.println("Conexión con PayPal establecida");
         return true;
     }
