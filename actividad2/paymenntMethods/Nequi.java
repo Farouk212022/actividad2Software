@@ -23,7 +23,7 @@ public class Nequi {
         return true;
     }
 
-    public boolean initTransferProcces(){
+    public boolean initTransferProcess(){
         System.out.println("Iniciando Transferencia");
         return true;
     }
