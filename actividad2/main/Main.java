@@ -17,15 +17,15 @@ public static void main(String[] args) {
         new Product("Camisa", 50000)); 
   
     Purchase purchaseCreditCard = new Purchase(new CreditCard("Usuario de Prueba", 123456789, 123), products);
-    System.out.println("El total de su compra es: "+purchaseCreditCard.getTotal());
+    System.out.println("\n"+"El total de su compra es: "+purchaseCreditCard.getTotal());
     purchaseCreditCard.pay();
 
     Purchase purchasePayPal = new Purchase(new PayPal(123456789, "Contrasena"), products);
-    System.out.println("El total de su compra es: "+purchasePayPal.getTotal());
+    System.out.println("\n"+"El total de su compra es: "+purchasePayPal.getTotal());
     purchasePayPal.pay();
 
     Purchase purchaseNewMethod = new Purchase(new NewMethodAdapter(new NewMethod("Usuario de Prueba",123456789, "123456")), products);
-    System.out.println("El total de su compra es: "+purchaseNewMethod.getTotal());
+    System.out.println("\n"+"El total de su compra es: "+purchaseNewMethod.getTotal());
     purchaseNewMethod.pay();
     }   
 }   
