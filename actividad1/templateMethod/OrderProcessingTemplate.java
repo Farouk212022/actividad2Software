@@ -1,37 +1,68 @@
 package actividad1.templateMethod;
 
-import actividad1.product.IProduct;
+import actividad1.inventory.Inventory;
+
 
 public abstract class OrderProcessingTemplate {
 
     public String name;
+    public String type;
+    public int amount;
+    public int price;
+    public int total;
 
-    OrderProcessingTemplate(){}
+    public OrderProcessingTemplate(){}
+    public final void processOrder() {
 
-    final public void processOrder(String product) {
+        System.out.println("=========PROCESS "+name.toUpperCase()+" STARTS=========");
+        if (checkStock()){
 
-        if (checkInventory()){
-            //Podemos poner solo los metodos del desarrollo de la orden pero no es necesario
-            //especificar que si esta disponible!
-            System.out.println(product+" is available in the inventory");
+            System.out.println(name+" is available in the inventory");
+            shipProduct();
+            generateInvoice();
+
         }else {
-            System.out.println(product+ " is not available in the inventory");
+            System.out.println(name+ " is not available in the inventory");
         }
         clientNotification();
-        shipProduct();
+        System.out.println("=========PROCESS "+name.toUpperCase()+" ENDS=========");
+
+    }
+    public void generateInvoice(){
+
+        System.out.println();
+        System.out.println("---INVOICE PROCESS STARTS---");
+        addCost();
+        System.out.println("The price of "+name+" is "+price+"COP");
+        System.out.println("The user has a discount");
+        applyDiscount();
+        calculateTotal();
+        System.out.println("Total price to pay is "+total+"COP discount per item included");
+        System.out.println("---INVOICE PROCESS ENDS---");
+        System.out.println();
 
     }
 
-    public boolean checkInventory2() {
+    public void addCost(){
 
-        if()
-        return true
+        this.price = Inventory.retrieveInventory(type).price;
+
+    }
+    public void calculateTotal(){
+        if(amount != 0){
+            this.total = this.price * this.amount;
+        }else{
+            this.total = this.price;
+        }
+    }
+    public boolean checkStock() {
+        return Inventory.retrieveInventory(type).stock-amount >= 0;
     }
     public void clientNotification(){
-        System.out.println("Notification sent to user");
+        System.out.println();
+        System.out.println("Notification sent to the user");
     }
-
-    public abstract boolean checkInventory();
     public abstract void shipProduct();
+    public abstract void applyDiscount();
 
 }
