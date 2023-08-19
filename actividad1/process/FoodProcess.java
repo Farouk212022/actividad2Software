@@ -5,12 +5,8 @@ import actividad1.templateMethod.OrderProcessingTemplate;
 
 public class FoodProcess extends OrderProcessingTemplate{
 
-    public FoodProcess(String name, int amount){
-
-        this.type = "Food";
-        this.name = name;
-        this.amount = amount;
-        new Inventory();
+    public FoodProcess(Inventory inventory) {
+        super(inventory);
     }
 
     @Override
@@ -18,12 +14,11 @@ public class FoodProcess extends OrderProcessingTemplate{
 
         System.out.println();
         System.out.println("---SHIPMENT PROCESS STARTS---");
-        System.out.println("A driver is waiting for your "+name);
-        System.out.println("The "+name+" is ready for pickup");
-        System.out.println("The driver is on your way with the "+name);
+        System.out.println("A driver is waiting for your "+order.getName());
+        System.out.println("The "+order.getName()+" is ready for pickup");
+        System.out.println("The driver is on your way with the "+order.getName());
         System.out.println("---SHIPMENT PROCESS ENDS---");
         System.out.println();
-
 
     }
 
@@ -31,7 +26,7 @@ public class FoodProcess extends OrderProcessingTemplate{
     public void applyDiscount() {
         double discount = 0.05;
         System.out.println("Applying 5% anniversary discount for loyalty to the brand");
-        price = price - (int) (price*discount);
+        order.setPrice(order.getPrice() - (int) (order.getPrice()*discount));
 
     }
 }
