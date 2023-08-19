@@ -1,6 +1,7 @@
 package actividad1.templateMethod;
 
 import actividad1.inventory.Inventory;
+import actividad1.product.Product;
 
 
 public abstract class OrderProcessingTemplate {
@@ -11,7 +12,11 @@ public abstract class OrderProcessingTemplate {
     public int price;
     public int total;
 
-    public OrderProcessingTemplate(){}
+    private Inventory inventory;
+
+    public OrderProcessingTemplate(Inventory inventory){
+        this.inventory = inventory;
+    }
     public final void processOrder() {
 
         System.out.println("=========PROCESS "+name.toUpperCase()+" STARTS=========");
@@ -56,7 +61,7 @@ public abstract class OrderProcessingTemplate {
         }
     }
     public boolean checkStock() {
-        return Inventory.retrieveInventory(type).stock-amount >= 0;
+        return inventory.getProductStock(product) - amount >= 0;
     }
     public void clientNotification(){
         System.out.println();

@@ -3,9 +3,9 @@ package actividad1.order;
 
 import actividad1.templateMethod.OrderProcessingTemplate;
 
-public class ClothesOrder extends OrderProcessingTemplate {
+public class ClothesOrderProcess extends OrderProcessingTemplate {
 
-    public ClothesOrder(String name, int amount){
+    public ClothesOrderProcess(String name, int amount){
         this.type = "Clothes";
         this.name = name;
         this.amount = amount;
