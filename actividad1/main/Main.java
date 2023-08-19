@@ -1,23 +1,22 @@
 package actividad1.main;
 
-import actividad1.order.ClothesOrder;
-import actividad1.order.ElectronicsOrder;
-import actividad1.order.FoodOrder;
+import actividad1.process.ClothesProcess;
+import actividad1.process.ElectronicsProcess;
+import actividad1.process.FoodProcess;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-        FoodOrder foodProcess = new FoodOrder("Pizza", 1);
-        ClothesOrder clothesProcess = new ClothesOrder("Skirt", 2);
-        ElectronicsOrder electronicsProcess = new ElectronicsOrder("SmartTV", 2);
+        FoodProcess foodProcess = new FoodProcess("Pizza", 2);
+        ClothesProcess clothesProcess = new ClothesProcess("Skirt", 2);
+        ElectronicsProcess electronicsProcess = new ElectronicsProcess("SmartTV", 1);
 
-        System.out.println();
         foodProcess.processOrder();
-        System.out.println();
+
         clothesProcess.processOrder();
-        System.out.println();
+
         electronicsProcess.processOrder();
     }
 }   

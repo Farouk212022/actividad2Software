@@ -1,35 +1,33 @@
-package actividad1.order;
+package actividad1.process;
 
 import actividad1.templateMethod.OrderProcessingTemplate;
 
-public class ElectronicsOrder extends OrderProcessingTemplate {
+public class ClothesProcess extends OrderProcessingTemplate {
 
-    public ElectronicsOrder(String name, int amount){
-
-        this.type = "Electronics";
+    public ClothesProcess(String name, int amount){
+        this.type = "Clothes";
         this.name = name;
         this.amount = amount;
-
     }
 
     @Override
     public void shipProduct() {
-
         System.out.println();
         System.out.println("---SHIPMENT PROCESS STARTS---");
-        System.out.println("Creating unique identifier for the "+name);
-        System.out.println("Adding stickers about care for the box");
+        System.out.println("Packing "+name+" in a bag");
+        System.out.println("Adding bags on a box");
         System.out.println("Box shipped");
         System.out.println("---SHIPMENT PROCESS ENDS---");
         System.out.println();
+
     }
 
     @Override
     public void applyDiscount() {
-        double discount = 0.20;
-        System.out.println("Applying 20% student discount");
+        double discount = 0.10;
+        System.out.println("Applying 10% off season sale");
         price = price - (int) (price*discount);
 
-
     }
+
 }

@@ -1,15 +1,16 @@
-package actividad1.order;
+package actividad1.process;
 
+import actividad1.inventory.Inventory;
 import actividad1.templateMethod.OrderProcessingTemplate;
 
-public class FoodOrder extends OrderProcessingTemplate{
+public class FoodProcess extends OrderProcessingTemplate{
 
-    public FoodOrder(String name, int amount){
+    public FoodProcess(String name, int amount){
 
         this.type = "Food";
         this.name = name;
         this.amount = amount;
-
+        new Inventory();
     }
 
     @Override
