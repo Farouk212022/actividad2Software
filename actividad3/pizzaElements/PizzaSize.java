@@ -1,4 +1,4 @@
-package actividad3.main;
+package actividad3.pizzaElements;
 
 public class PizzaSize {
     public static final PizzaSize SMALL = new PizzaSize("Small", 8);

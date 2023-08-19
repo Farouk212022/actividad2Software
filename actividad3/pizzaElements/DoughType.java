@@ -1,4 +1,4 @@
-package actividad3.main;
+package actividad3.pizzaElements;
 
 public class DoughType {
     public static final DoughType THIN = new DoughType("Thin", 1.00);
@@ -19,5 +19,9 @@ public class DoughType {
 
     public double getPriceBySize(PizzaSize size) {
         return pricePerCm * size.getDiameterCm();
+    }
+
+    public double getCrustPrice() {
+        return 1.50;
     }
 }

@@ -1,4 +1,8 @@
-package actividad3.main;
+package actividad3.receipt;
+
+import actividad3.pizzaElements.DoughType;
+import actividad3.pizzaElements.Ingredient;
+import actividad3.pizzaElements.PizzaSize;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,11 +21,11 @@ public class Receipt {
     }
 
     public double getTotalPrice() {
-        double sizePrice = dough.getPriceBySize(size);
+        double doughPrice = dough.getPriceBySize(size);
         double ingredientsPrice = getIngredientsPrice();
-        double crustPrice = cheeseCrust ? 1.5 : 0;
+        double cheeseCrustPrice = cheeseCrust ? dough.getCrustPrice() : 0;
 
-        return sizePrice + ingredientsPrice + crustPrice;
+        return doughPrice + ingredientsPrice + cheeseCrustPrice;
     }
 
     public double getIngredientsPrice() {

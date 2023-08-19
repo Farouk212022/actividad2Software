@@ -1,9 +1,13 @@
-package actividad3.main.builders;
+package actividad3.builders;
 
-import actividad3.main.*;
+import actividad3.main.Builder;
+import actividad3.pizza.Pizza;
+import actividad3.receipt.Receipt;
+import actividad3.pizzaElements.DoughType;
+import actividad3.pizzaElements.Ingredient;
+import actividad3.pizzaElements.PizzaSize;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class PizzaBuilder implements Builder {
     private PizzaSize size;

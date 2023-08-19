@@ -1,4 +1,4 @@
-package actividad3.main;
+package actividad3.pizzaElements;
 
 public class Ingredient {
     public static final Ingredient CHEESE = new Ingredient("Cheese", 0.50);
@@ -13,9 +13,9 @@ public class Ingredient {
     private String name;
     private double pricePerPortion;
 
-    private Ingredient(String name, double price) {
+    private Ingredient(String name, double pricePerPortion) {
         this.name = name;
-        this.pricePerPortion = price;
+        this.pricePerPortion = pricePerPortion;
     }
 
     public String getName() {
