@@ -29,12 +29,12 @@ public class Pizza {
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder("Pizza size: " + size + "\n");
-        result.append("Dough type: ").append(dough).append("\n");
+        StringBuilder result = new StringBuilder("Pizza size: " + size.getName() + "\n");
+        result.append("Dough type: ").append(dough.getName()).append("\n");
         result.append("Cheese crust: ").append(cheeseCrust).append("\n");
         result.append("Ingredients: \n");
         for (Ingredient ingredient : ingredients.keySet()) {
-            result.append("\t").append(ingredient).append("\n");
+            result.append("\t").append(ingredient.getName()).append("\n");
         }
         return result.toString();
     }

@@ -37,17 +37,18 @@ public class Receipt {
     @Override
     public String toString() {
         StringBuilder receipt = new StringBuilder();
-        receipt.append("Receipt\n");
-        receipt.append("Size: ").append(size.getName()).append("\n");
-        receipt.append("Dough: ").append(dough.getName()).append("\n");
+        receipt.append("===========Pizza Receipt===========\n");
+        receipt.append(String.format("Size: %-15s \n", size.getName()));
+        receipt.append(String.format("Dough: %-14s Price: $%.2f\n", dough.getName(), dough.getPriceBySize(size)));
         receipt.append("Ingredients:\n");
         for (Map.Entry<Ingredient, Integer> entry : ingredients.entrySet()) {
             Ingredient ingredient = entry.getKey();
             int quantity = entry.getValue();
-            receipt.append("- ").append(ingredient.getName()).append(": ").append(quantity).append("\n");
+            double ingredientPrice = ingredient.getPricePerPortion() * quantity;
+            receipt.append(String.format("- %-12s (x%d)   Price: $%.2f\n", ingredient.getName(), quantity, ingredientPrice));
         }
-        receipt.append("Cheese Crust: ").append(cheeseCrust ? "Yes" : "No").append("\n");
-        receipt.append("Total Price: $").append(getTotalPrice()).append("\n");
+        receipt.append(String.format("Cheese Crust: %-7s Price: $%.2f\n", cheeseCrust ? "Yes" : "No", cheeseCrust ? 1.5 : 0));
+        receipt.append(String.format("Total Price: $%.2f\n", getTotalPrice()));
         return receipt.toString();
     }
 }

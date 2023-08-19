@@ -8,15 +8,11 @@ import java.util.List;
 public class PizzaBuilder implements Builder {
     private PizzaSize size;
     private DoughType doughType;
-
     private boolean cheeseCrust;
     private HashMap<Ingredient, Integer> ingredients;
 
-    private final List<Ingredient> allowedIngredients;
-
-    public PizzaBuilder(List<Ingredient> allowedIngredients) {
+    public PizzaBuilder() {
         this.ingredients = new HashMap<>();
-        this.allowedIngredients = allowedIngredients;
     }
     @Override
     public void setSize(PizzaSize size) {
@@ -26,6 +22,7 @@ public class PizzaBuilder implements Builder {
     @Override
     public void buildDough(DoughType doughType, boolean cheeseCrust) {
         this.doughType = doughType;
+        this.cheeseCrust = cheeseCrust;
     }
 
     @Override
@@ -33,8 +30,12 @@ public class PizzaBuilder implements Builder {
         this.ingredients.put(ingredient, quantity);
     }
 
-    public Pizza getResult() {
+    public Pizza getPizza() {
         return new Pizza(this.size, this.doughType, this.ingredients, this.cheeseCrust);
+    }
+
+    public Receipt getReceipt() {
+        return new Receipt(this.size, this.doughType, this.ingredients, this.cheeseCrust);
     }
 
     @Override
