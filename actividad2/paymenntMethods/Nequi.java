@@ -23,18 +23,18 @@ public class Nequi {
         return true;
     }
 
-    public boolean initTransferProcess(){
-        System.out.println("Iniciando Transferencia");
+    public boolean confirmUsers(){
+        System.out.println("Usuarios encontrados");
         return true;
     }
 
-    public boolean transferConfirmed(){
+    public String transferConfirmed(){
         System.out.println("Transferencia Confirmada");
-        return true;
+        return "CONFIRMADO";
     }
 
-    public boolean closeConnectionToNequi(){
-        System.out.println("Conexión con Nequi cerrada");
+    public boolean closeTransferToNequi(){
+        System.out.println("Transferenicia terminada");
         return true;
     }
 }

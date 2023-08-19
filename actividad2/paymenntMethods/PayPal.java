@@ -22,8 +22,9 @@ public class PayPal implements IPaymentMethod{
     }
 
     @Override
-    public void confirmPayment() {
+    public boolean confirmPayment() {
         System.out.println("Pago con PayPal realizado");
+        return true;
     }
     
 }

@@ -25,14 +25,14 @@ public abstract class OrderProcessingTemplate {
             System.out.println(name+ " is not available in the inventory");
         }
         clientNotification();
-        System.out.println("=========PROCESS "+name.toUpperCase()+" ENDS=========");
+        System.out.println("=========PROCESS "+name.toUpperCase()+" ENDS=========\n");
 
     }
     public void generateInvoice(){
 
         System.out.println();
         System.out.println("---INVOICE PROCESS STARTS---");
-        addCost();
+        calculateCost();
         System.out.println("The price of "+name+" is "+price+"COP");
         System.out.println("The user has a discount");
         applyDiscount();
@@ -43,9 +43,9 @@ public abstract class OrderProcessingTemplate {
 
     }
 
-    public void addCost(){
+    public void calculateCost(){
 
-        this.price = Inventory.retrieveInventory(type).price;
+        this.price = Inventory.retrievePrice(type);
 
     }
     public void calculateTotal(){
@@ -56,7 +56,7 @@ public abstract class OrderProcessingTemplate {
         }
     }
     public boolean checkStock() {
-        return Inventory.retrieveInventory(type).stock-amount >= 0;
+        return Inventory.retrieveStock(type)-amount >= 0;
     }
     public void clientNotification(){
         System.out.println();
