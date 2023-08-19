@@ -11,7 +11,8 @@ Se enfrentó el desafío de desarrollar un sistema de procesamiento de pedidos e
 
 ## Caso 2:
 En este escenario, se buscaba integrar un nuevo sistema de pago externo en una plataforma de comercio electrónico que tenía interfaces incompatibles. Para superar este desafío, se implementó el patrón de diseño Adapter. Este patrón posibilitó la creación de un adaptador que fungía como intermediario entre el sistema de pago incompatible y la plataforma de comercio electrónico, permitiendo una integración fluida sin cambiar la lógica interna del s
-![UML PatronesDiseño-Adapter drawio (1)](https://github.com/Farouk212022/actividad2Software/assets/88839008/60ce74d6-527c-4a56-b302-41cf68f687f8)
+![UML PatronesDiseño-Adapter drawio](https://github.com/Farouk212022/actividad2Software/assets/88839008/60ce74d6-527c-4a56-b302-41cf68f687f8)
 
 ## Caso 3:
 El objetivo en este caso era desarrollar un sistema que permitiera a los clientes crear pizzas personalizadas con ingredientes, tamaños y opciones de cobertura específicas. Para abordar esta situación, se aplicó el patrón de diseño Builder. El patrón Builder facilitó la creación paso a paso de objetos complejos, como las órdenes de pizza personalizadas, permitiendo a los clientes seleccionar tamaños, ingredientes y opciones de cobertura según sus preferencias.
+![UML PatronesDiseño-Builder drawio](https://github.com/Farouk212022/actividad2Software/assets/63802742/3bbe5a17-11bf-43e7-bfb2-add1a7af769c)
