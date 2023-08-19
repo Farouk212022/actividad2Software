@@ -4,5 +4,5 @@ public interface IPaymentMethod {
     
     boolean validateConnection();
 
-    void confirmPayment();
+    boolean confirmPayment();
 }

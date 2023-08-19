@@ -23,8 +23,9 @@ public class CreditCard  implements IPaymentMethod{
     }
 
     @Override
-    public void confirmPayment() {
+    public boolean confirmPayment() {
         System.out.println("Pago con Tarjeta de Credito realizado");
+        return true;
     }
     
 }
