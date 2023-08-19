@@ -15,4 +15,4 @@ En este escenario, se buscaba integrar un nuevo sistema de pago externo en una p
 
 ## Caso 3:
 El objetivo en este caso era desarrollar un sistema que permitiera a los clientes crear pizzas personalizadas con ingredientes, tamaños y opciones de cobertura específicas. Para abordar esta situación, se aplicó el patrón de diseño Builder. El patrón Builder facilitó la creación paso a paso de objetos complejos, como las órdenes de pizza personalizadas, permitiendo a los clientes seleccionar tamaños, ingredientes y opciones de cobertura según sus preferencias.
-![UML PatronesDiseño-Builder drawio](https://github.com/Farouk212022/actividad2Software/assets/63802742/3bbe5a17-11bf-43e7-bfb2-add1a7af769c)
+![UML PatronesDiseño-Builder](https://github.com/Farouk212022/actividad2Software/assets/63802742/534ed8ff-2626-49c1-a3c4-38107440dbf2)
