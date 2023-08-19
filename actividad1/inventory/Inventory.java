@@ -2,13 +2,10 @@ package actividad1.inventory;
 
 import actividad1.product.Product;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Inventory {
-    private Map<Product, Integer> inventory;
+    private final Map<Product, Integer> inventory;
 
     public Inventory(Map<Product, Integer> inventory){
         this.inventory = inventory;
